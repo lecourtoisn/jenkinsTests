@@ -22,9 +22,9 @@ node {
     stage('Nexus Deployment') {
 
         if (isUnix()) {
-            sh "'${mvnHome}/bin/mvn' clean package"
+            sh "'${mvnHome}/bin/mvn' -X deploy"
         } else {
-            bat(/"${mvnHome}\bin\mvn" deploy/)
+            bat(/"${mvnHome}\bin\mvn" -X deploy/)
         }
     }
 }
