@@ -22,8 +22,9 @@ node {
         //   junit '**/target/surefire-reports/TEST-*.xml'
         archive 'target/*.jar'
         pwd()
-        sh '''echo "test"
-            echo $(PWD)'''
+//        sh '''echo "test"
+//            echo $(PWD)'''
+        sh "echo testingPipeline"
 
     }
 
