@@ -27,5 +27,6 @@ node {
     stage('Nexus Deployment') {
         bat("echo Jenkins Testing Pipeline")
         bat("cd")
+        bat("mvn --version")
     }
 }
