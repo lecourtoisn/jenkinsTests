@@ -24,7 +24,7 @@ node {
         if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' deploy"
         } else {
-            bat(/"${mvnHome}\bin\mvn" deploy/)
+            bat(/"${mvnHome}\bin\mvn" -X deploy/)
         }
     }
 }
