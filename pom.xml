@@ -7,5 +7,11 @@
     <groupId>atos</groupId>
     <artifactId>jenkinsTests</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>nexus repository</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </repository>
+    </distributionManagement>
 </project>

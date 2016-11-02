@@ -13,20 +13,18 @@ node {
     stage('Build') {
         // Run the maven build
         if (isUnix()) {
-            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+            sh "'${mvnHome}/bin/mvn' clean package"
         } else {
-            bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+            bat(/"${mvnHome}\bin\mvn" clean package/)
         }
-    }
-    stage('Results') {
-        //   junit '**/target/surefire-reports/TEST-*.xml'
-        archive 'target/*.jar'
-
     }
 
     stage('Nexus Deployment') {
-        bat("echo Jenkins Testing Pipeline")
-        bat("cd")
-        bat("mvn --version")
+
+        if (isUnix()) {
+            sh "'${mvnHome}/bin/mvn' clean package"
+        } else {
+            bat(/"${mvnHome}\bin\mvn" deploy/)
+        }
     }
 }
