@@ -28,7 +28,7 @@ node {
 
     }
 
-    stage('Nexus Deployment') {
-        sh 'echo Test'
-    }
+//    stage('Nexus Deployment') {
+//        sh 'echo Test'
+//    }
 }
