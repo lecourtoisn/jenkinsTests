@@ -21,14 +21,11 @@ node {
     stage('Results') {
         //   junit '**/target/surefire-reports/TEST-*.xml'
         archive 'target/*.jar'
-        pwd()
-//        sh '''echo "test"
-//            echo $(PWD)'''
-        sh "echo testingPipeline"
 
     }
 
-//    stage('Nexus Deployment') {
-//        sh 'echo Test'
-//    }
+    stage('Nexus Deployment') {
+        bat("echo Jenkins Testing Pipeline")
+        bat("cd")
+    }
 }
